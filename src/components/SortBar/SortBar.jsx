@@ -16,6 +16,18 @@ export const SortBar = () => {
   return (
     <div className="w-full px-4 py-2 flex justify-between items-center border-b border-darkGrey">
       <div>{activeSort} Posts</div>
+      <div style={sidebarStyle}>
+      <h2 style={headerStyle}>My Sidebar</h2>
+      <ul style={listStyle}>
+        {links.map((link) => (
+          <li key={link.path} style={listItemStyle}>
+            <a href={link.path} style={linkStyle}>
+              {link.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
 
       <div className="relative" ref={modalRef}>
         <button
